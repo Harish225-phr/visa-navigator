@@ -1,10 +1,16 @@
 {
-  "buildCommand": "npm run build && node scripts/generate-index.js",
+  "buildCommand": "npm run build",
   "outputDirectory": "dist/client",
+  "functions": {
+    "api/index.js": {
+      "maxDuration": 30,
+      "memory": 3008
+    }
+  },
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/index.html"
+      "destination": "/api"
     }
   ],
   "headers": [
@@ -17,7 +23,5 @@
         }
       ]
     }
-  ],
-  "cleanUrls": true,
-  "trailingSlash": false
+  ]
 }

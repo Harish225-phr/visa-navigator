@@ -3,9 +3,11 @@
 .env.local
 .env.*.local
 node_modules
-dist
 build
 .wrangler
 .tanstack
 pnpm-lock.yaml
 yarn.lock
+dist/client
+dist/server/.vite
+dist/server/wrangler.json
