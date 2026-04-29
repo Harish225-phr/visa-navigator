@@ -9,10 +9,11 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 export default defineConfig({
   vite: {
     build: {
+      outDir: 'dist/client',
       rollupOptions: {
         output: {
           // Disable Cloudflare worker generation
-          dir: 'dist',
+          dir: 'dist/client',
         },
       },
     },
