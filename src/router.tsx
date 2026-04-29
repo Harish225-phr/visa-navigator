@@ -1,4 +1,4 @@
-import { createRouter, useRouter } from "@tanstack/react-router";
+import { createRouter, useRouter, createBrowserHistory } from "@tanstack/react-router";
 import { routeTree } from "./routeTree.gen";
 
 function DefaultErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
@@ -54,9 +54,12 @@ function DefaultErrorComponent({ error, reset }: { error: Error; reset: () => vo
   );
 }
 
+const history = createBrowserHistory();
+
 export const getRouter = () => {
   const router = createRouter({
     routeTree,
+    history,
     context: {},
     scrollRestoration: true,
     defaultPreloadStaleTime: 0,
