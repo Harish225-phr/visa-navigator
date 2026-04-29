@@ -1,10 +1,24 @@
 {
   "buildCommand": "npm run build && node scripts/generate-index.js",
   "outputDirectory": "dist/client",
+  "env": {
+    "VITE_API_BASE": "@VITE_API_BASE"
+  },
   "rewrites": [
     {
       "source": "/(.*)",
       "destination": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,11 @@
+.git
+.gitignore
+.env.local
+.env.*.local
+node_modules
+dist
+build
+.wrangler
+.tanstack
+pnpm-lock.yaml
+yarn.lock
