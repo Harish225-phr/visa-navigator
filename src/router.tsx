@@ -54,17 +54,20 @@ function DefaultErrorComponent({ error, reset }: { error: Error; reset: () => vo
   );
 }
 
-const history = createBrowserHistory();
+let router: ReturnType<typeof createRouter> | null = null;
 
 export const getRouter = () => {
-  const router = createRouter({
-    routeTree,
-    history,
-    context: {},
-    scrollRestoration: true,
-    defaultPreloadStaleTime: 0,
-    defaultErrorComponent: DefaultErrorComponent,
-  });
+  if (!router) {
+    const history = createBrowserHistory();
+    router = createRouter({
+      routeTree,
+      history,
+      context: {},
+      scrollRestoration: true,
+      defaultPreloadStaleTime: 0,
+      defaultErrorComponent: DefaultErrorComponent,
+    });
+  }
 
   return router;
 };
