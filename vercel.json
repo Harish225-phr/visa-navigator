@@ -1,9 +1,6 @@
 {
   "buildCommand": "npm run build && node scripts/generate-index.js",
   "outputDirectory": "dist/client",
-  "env": {
-    "VITE_API_BASE": "@VITE_API_BASE"
-  },
   "rewrites": [
     {
       "source": "/(.*)",
